@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <script src="https://kit.fontawesome.com/d020e05036.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+       
+        
+    </head>
+    <style>
+        body{
+            background-image: url("http://getwallpapers.com/wallpaper/full/5/6/c/459235.jpg");
+            background-attachment: fixed;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        
+        
+        main{
+            background-color:transparent;
+            color: rgb(0, 255, 8);
+            border-radius: 10px 10px;
+            margin-left: 400px;
+            width: fit-content;
+            padding: 35px 35px;
+            font-size: 30px;
+            box-shadow: 2px 2px 2px 2px gold;
+        }
+        abtest{
+            margin-left: 10px;
+           
+
+        }
+        vehicle{
+            margin-left:10px;
+            
+        }
+        block{
+            margin-left: 20px;
+        }
+    
+.a{
+    background-color: red;
+    color:white;
+}
+
+.a:hover{
+    background-color: blue;
+    color: white;
+}
+
+.b{
+    font-size: 40px;
+    box-shadow: 2px 2px blueviolet;
+    border-radius: 5px 5px;
+}
+.b:hover{
+background-color:grey;
+color: white;
+
+
+}
+.z{
+    font-size: 25px;
+    background-color: transparent;
+    color: white;
+}
+.z:hover{
+    background-color: burlywood;
+    color: white;
+}
+    </style>
+    <body>
+        <form action="{{ url_for('predict')}}" method="post">
+            
+                
+                  <h1 class="font-effect-fire"style="font-size:80px;text-align:center;font-family:Century Gothic;"><i class="fa-solid fa-car"></i><span style="color: red;">Car</span><span style="color: green;"> Resale</span><span style="color: blue;"> Prediction</span><i class="fa-solid fa-car"></i></h1>
+               
+        <main>
+            <block>
+    <label>SELLER_TYPE</label>
+    <select name="seller" class="z"required="required";>
+        <option value="private"style="background-color:blue;">private</option>
+        <option value="gewerblich"style="background-color:blue;">gewerblich</option>
+
+    </select>
+    <abtest>
+    <label for="abtest">ABTEST</label>
+    <select  class="z"name="abtest"required="required">
+        <option value="test"style="background-color:blue;">test</option>
+        <option value="control"style="background-color:blue;">control</option>
+    </select>
+</abtest>
+
+    <vehicle>
+    <label for="vehicletype">VEHICLE_TYPE</label>
+    <select id="vehicletype" name="vehicleType" class="z">
+        <option value="limousine"style="background-color:blue;">limousine</option>
+                <option value="kleinwagen"style="background-color:blue;">kleinwagen</option>
+                <option value="kombin"style="background-color:blue;">kombin</option>
+                <option value="bus"style="background-color:blue;">bus</option>
+                <option value="cabrio"style="background-color:blue;">cabrio</option>
+                <option value="coupe"style="background-color:blue;">coupe</option>
+                <option value="suv"style="background-color:blue;">suv</option>
+                <option value="andere"style="background-color:blue;">andere</option>
+
+
+</select>
+</vehicle>
+    <p style="margin-left: 15px;">YEAR_OF_REGISTRATION<input type="number" name="yearOfRegistration" style="margin-left:10px ;border: 1px solid white;border-radius: 5px 5px;padding: 8px 8px;border: 1px solid black;background-color:transparent;font-size:25px;color:white;border: 1px solid white;"></p>
+    <p style="margin-left: 170px;">POWER_IN_PS<input name="powerPS" required="required"type="number"style="border-radius: 5px 5px;border: 1px solid pink;padding: 8px 8px;border: 1px solid black;margin-left:20px;background-color:transparent;font-size:25px;color:white;border: 1px solid pink;"></p>
+    <p style="margin-left: 70px;">KILOMETERS_DRIVEN<input type="number" required="required"name="kilometer"style="border-radius: 5px 5px;padding: 8px 8px;border: 1px solid white;margin-left:10px;background-color:transparent;font-size:25px;color:white;"></p>
+    <p>MONTH_OF_REGISTRATION<input type="number" range="12"name="monthOfRegistration"style="margin-left:10px ;border-radius: 5px 5px;padding: 8px 8px;border: 1px solid white;background-color:transparent;font-size:25px;color:white;"></p>
+    <label for="fuel type">FUEL_TYPE</label>
+    <select id="fuel type"name="fuelType"required="required"class="z">
+        <option value="lpg"style="background-color:blue;">lpg</option>
+        <option value="Diesel"style="background-color:blue;">Diesel</option>
+        <option value="cng"style="background-color:blue;">CNG</option>
+        <option value="benzin"style="background-color:blue;">benzin</option>
+        <option value="andere"style="background-color:blue;">andere</option>
+        <option value="elecktro"style="background-color:blue;">elecktro</option>
+        <option value="hybrid"style="background-color:blue;">hybrid</option>
+    </select>
+    <label for="no of Repaired Damase" style="margin-left: 10px;">NOT_REAPAIRED_DAMAGE</label>
+    <select name="notRepairedDamage" id="first" required="required" class="z">
+        <option value="nein"style="background-color:blue;">nein</option>
+        <option value="ja"style="background-color:blue;">ja</option>
+
+    </select>
+    <p style="margin-left: 53px;">NUMBER_OF_PICTURES<input type="number"required="required"name="nrOfPictures"style="border-radius: 5px 5px;padding: 8px 8px;border: 1px solid white;margin-left:20px;background-color:transparent;font-size:25px;color:white;""></p>
+    <p style="margin-left: 180px;">POSTAL_CODE<input type="number" required="required" name="postalCode"style="border-radius: 5px 5px;padding: 8px 8px;border: 1px solid white;margin-left:20px;background-color:transparent;font-size:25px;color:white;""></p>
+</select>
+<label for="offertype">OFFER_TYPE</label>
+<select  name="offerType_Gesuch" class="z">
+    <option value="Angebot"style="background-color:blue;">Angebot</option>
+    <option value="Gesuch"style="background-color:blue;">Gesuch</option>
+
+</select>
+
+<label for="gearbox_manuel" style="margin-left:10px;">GEARBOX_MANUELL</label>
+<select id="offertype"class="z" name="gearbox_manuell" >
+    <option value="Manuell"style="background-color:blue;">Manuell</option>
+    <option value="AutomatiK"style="background-color:blue;">AutomatiK</option>
+
+</select>  
+</block>
+        </main>
+        
+   <br> 
+<button  class="a"style="color:white;padding: 5px 5px;text-align: center;margin-left: 850px;font-size: 30px;cursor: pointer;border-radius:10px 10px;background-color:red;font-size:25px;color:white;border:1px solid white">
+    SUBMIT
+</button>
+</form>     
+<h3 style="font-size: 40px;color:white;background-color:rgba(0, 96, 128, 0.744);width:fit-content;padding:5px 5px;text-align:center;margin-left:600px;">{{ prediction_text }}<h3></h3>
+    </body>
+    </html>
